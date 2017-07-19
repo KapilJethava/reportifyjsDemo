@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+  <md-toolbar color="primary">
+    <!--<button class="app-icon-button" (click)="sidenav.toggle()" md-button>
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>-->
+    K Reporting
+  </md-toolbar>
+
+
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns" ng-if="col.Visible">
+        {{col.Caption}}
+      </th>
+    </tr>
+  </thead>
+  <tr *ngFor="let row of users">
+    <td *ngFor="let col of columns">
+      {{ row[col.PropertyName] }}
+    </td>
+  </tr>
+</table>

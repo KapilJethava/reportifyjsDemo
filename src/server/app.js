@@ -4,7 +4,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var logger = require('morgan');
+// var logger = require('morgan');
 var port = process.env.PORT || 5555;
 var four0four = require('./utils/404')();
 
@@ -12,7 +12,7 @@ var environment = app.get('env'); // process.env.NODE_ENV;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(logger('dev'));
+// app.use(logger('dev'));
 
 app.use('/api', require('./api'));
 

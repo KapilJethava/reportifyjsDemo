@@ -1,12 +1,4 @@
-  <md-toolbar color="primary">
-    <!--<button class="app-icon-button" (click)="sidenav.toggle()" md-button>
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button>-->
-    K Reporting
-  </md-toolbar>
-
-
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th *ngFor="let col of columns" ng-if="col.Visible">
@@ -19,4 +11,20 @@
       {{ row[col.PropertyName] }}
     </td>
   </tr>
-</table>
+</table> -->
+ <app-report data="[users]">
+    <div *ngFor="let u of users" class="item">
+      <div class="flex flex-row padding-all">
+        <img src="{{u.photo_id}}" />
+        <h3>{{u.first_name}} {{u.last_name}}</h3>
+      </div>
+      <div class="padding-all">
+        <div style="
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow-x: hidden;
+        ">{{ u.email }}</div>
+        <div>{{ u.gender }}</div>
+      </div>
+    </div>
+</app-report>

@@ -1,0 +1,56 @@
+html,body{
+  width:100%;
+  height: 100%;
+}
+.flex {
+  display: flex;
+}
+.flex-colm{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-start{
+  align-content: flex-start;
+}
+.flex-grow{
+  flex-grow: 1;
+}
+.flex-shrink{
+  flex-shrink: 1;
+}
+.main-frame{
+  height: 100%;
+}
+.main-frame>.content-body{
+  overflow-y: auto;
+}
+.text-center
+{
+  text-align: center;
+}
+
+
+/***************/
+.header{
+  background-color: #2196F3;
+  padding: 15px;
+}
+.header .hdr-text{
+  font-size:1.5em;
+  color: #fff;
+}
+.item {
+    width: 235px;
+    margin: 5px;
+    border: 1px solid #8BC34A;
+    border-radius: 3px;
+    background-color: rgba(255, 235, 59, 0.04);
+}
+.padding-all{
+    padding:5px
+}

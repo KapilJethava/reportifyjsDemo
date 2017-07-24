@@ -1,9 +1,12 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule, Optional, SkipSelf} from '@angular/core';
+import { ReportComponent } from './report/report.component';
+
 
 @NgModule({
   imports: [],
   providers: [],
-  exports: []
+  exports: [ReportComponent],
+  declarations: [ReportComponent]
 })
 
 export class ReportModule {

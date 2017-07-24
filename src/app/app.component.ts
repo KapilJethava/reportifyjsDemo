@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientService } from './core/http-client/http-client.service';
-import { APIService } from './core/App-config/app-config.service';
+import { APIService } from './core/app-config/app-config.service';
 import { ApiConfig } from './core/core.constant';
 import { environment } from '../environments/environment';
 import { Column } from './core/classes/column';

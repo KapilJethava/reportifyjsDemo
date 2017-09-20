@@ -9,8 +9,8 @@ import _ from 'lodash';
 })
 export class ReportComponent implements OnInit {
   @Input() columns: Array<Column> = [];
-//  @Input() filters: Array<Filter> = [];
   @ContentChild(TemplateRef) itemTemplate;
+  //  @Input() filters: Array<Filter> = [];
   @Input() set data(value : Array<object>) {
     this.collection = _.cloneDeep(value);
     this.handleCollectionChange();

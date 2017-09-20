@@ -12,13 +12,6 @@ import { Field } from './reportModule/classes/field';
 })
 export class AppComponent implements OnInit {
   private users = [];
-  private columns = [new Field('id', 'ID'),
-    new Field('first_name', 'First Name'),
-    new Field('last_name', 'Last Name'),
-    new Field('email', 'Email'),
-    new Field('gender', 'Gender'),
-    new Field('ip_address', 'IP Address'),
-    new Field('photo_id',"Avtar")];
 
   constructor(private apiService: APIService,
               private httpService: HttpClientService) {

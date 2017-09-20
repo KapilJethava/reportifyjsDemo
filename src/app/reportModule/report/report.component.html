@@ -1,3 +1,33 @@
-<div class="flex flex-wrap">
-  <ng-content select=".item"></ng-content>
+<div class="flex flex-row" *ngIf="!isTabularReport">
+  <div class="filter-container flex">
+      <div class="filter">
+          <div class="header">
+
+          </div>
+          <div class="checklist-container">
+
+          </div>
+      </div>
+  </div>
+  <div class="flex flex-wrap">
+    <ng-template ngFor [ngForOf]="data" [ngForTemplate]="itemTemplate"> </ng-template>
+  </div>
+</div>
+<div class="flex padding-all" *ngIf="isTabularReport">
+    <table class="table table-bordered table-condensed">
+      <thead>
+        <tr>
+            <th *ngFor="let col of columns">
+              {{col.caption}}
+            </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of collection">
+          <th *ngFor="let col of columns">
+            {{ row[col.propName] }}
+          </th>
+        </tr>
+      </tbody>
+    </table>
 </div>

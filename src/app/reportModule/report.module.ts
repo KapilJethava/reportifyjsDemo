@@ -1,9 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf} from '@angular/core';
 import { ReportComponent } from './report/report.component';
 
-
 @NgModule({
-  imports: [],
+  imports: [CommonModule],
   providers: [],
   exports: [ReportComponent],
   declarations: [ReportComponent]

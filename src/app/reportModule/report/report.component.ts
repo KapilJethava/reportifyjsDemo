@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ContentChild, Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Column } from '../classes/field';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-report',
@@ -6,12 +8,40 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  @Input() data: Array<object> = [];
-  //@Input()
+  @Input() columns: Array<Column> = [];
+//  @Input() filters: Array<Filter> = [];
+  @ContentChild(TemplateRef) itemTemplate;
+  @Input() set data(value : Array<object>) {
+    this.collection = _.cloneDeep(value);
+    this.handleCollectionChange();
+  };
 
-  constructor() { }
+  //declaration
+  collection: Array<Object> = [];
+  isTabularReport:boolean = false;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
+    this.isTabularReport = !this.itemTemplate;
   }
+
+  handleCollectionChange() {
+    if (this.isTabularReport) {
+      if (_.isEmpty(this.columns) && !_.isEmpty(this.collection) && this.collection[0]) {
+        var id = 1;
+        _.forEach(this.collection[0], (value, propName) => {
+          let column = new Column(propName, propName);
+          column.id = id++;
+          this.columns.push(column);
+        });
+      }
+      else {
+        console.log("Requires to have columns");
+      }
+  }
+}
 
 }

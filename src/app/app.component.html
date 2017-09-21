@@ -12,19 +12,19 @@
     </td>
   </tr>
 </table> -->
- <app-report data="[users]">
-    <div *ngFor="let u of users" class="item">
+ <app-report [data]="users">
+   <ng-template let-u>
+    <div class="item">
       <div class="flex flex-row padding-all">
         <img src="{{u.photo_id}}" />
         <h3>{{u.first_name}} {{u.last_name}}</h3>
       </div>
       <div class="padding-all">
-        <div style="
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow-x: hidden;
-        ">{{ u.email }}</div>
+        <div style="width: 100%; text-overflow: ellipsis; overflow-x: hidden;">
+          {{ u.email }}
+        </div>
         <div>{{ u.gender }}</div>
       </div>
     </div>
+    </ng-template>
 </app-report>
